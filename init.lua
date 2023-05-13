@@ -23,14 +23,13 @@ require('koala_init').load_koala(leader_key)
 -- Load user config
 ------------------------------
 local require_dir = require('KoalaVim.utils.require_dir')
-require_dir.require('config')
-require_dir.require('config/keymaps')
+require_dir.recursive_require('config')
 
 -- Lazy load config/lazy after KoalaVim
 vim.api.nvim_create_autocmd('User', {
 	pattern = 'KoalaVimStarted',
 	callback = function()
-		require_dir.recursive_require('config/lazy')
+		require_dir.recursive_require('config_lazy')
 	end,
 })
 
