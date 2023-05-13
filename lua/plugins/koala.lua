@@ -2,7 +2,7 @@ local M = {}
 
 -- Custom setup of KoalaVim
 table.insert(M, {
-	'ofirgall/KoalaVim',
+	'KoalaVim/KoalaVim',
 	opts = {
 		-- No opts for now
 	},

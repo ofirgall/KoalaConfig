@@ -5,7 +5,7 @@ function M.load(user_spec, lazy_opts)
 	-- Bootstrap lazy.nvim and KoalaVim
 	local bootstrap = require('utils.bootstrap')
 	bootstrap('folke', 'lazy.nvim', 'stable', 'LAZY')
-	bootstrap('ofirgall', 'KoalaVim', 'master', 'KOALA')
+	bootstrap('KoalaVim', 'KoalaVim', 'master', 'KOALA')
 
 	local koala_spec = require('KoalaVim.spec')
 
