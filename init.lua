@@ -11,7 +11,6 @@
 -- Remap space as leader key to set the keymaps with correct leader key
 ------------------------------
 
--- TODO: [configure me] set different leader key
 local leader_key = ' '
 
 ------------------------------
@@ -44,7 +43,6 @@ require('koala_init').load_lazy {
 	-- lazy.nvim user opts (overrides KoalaVim lazy.nvim opts)
 	lazy_opts = {
 		install = {
-			-- TODO: [configure me] set your colorscheme
 			colorscheme = { 'ofirkai' }, -- Which colorscheme to let lazy.nvim load first
 		},
 	},
