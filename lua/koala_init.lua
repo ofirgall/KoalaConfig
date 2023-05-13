@@ -1,11 +1,36 @@
 -- KoalaVim initialization, DO NOT EDIT.
 local M = {}
 
-function M.load(user_spec, lazy_opts)
-	-- Bootstrap lazy.nvim and KoalaVim
-	local bootstrap = require('utils.bootstrap')
-	bootstrap('folke', 'lazy.nvim', 'stable', 'LAZY')
+-- bootstraps nvim plugins
+local function bootstrap(plugin_author, plugin_name, branch, env_path_override)
+	local path = vim.fn.stdpath('data') .. '/lazy/' .. plugin_name
+	if not vim.loop.fs_stat(path) then
+		-- bootstrap lazy.nvim
+		vim.fn.system({
+			'git',
+			'clone',
+			'--filter=blob:none',
+			'https://github.com/' .. plugin_author .. '/' .. plugin_name .. '.git',
+			'--branch=' .. branch,
+			path,
+		})
+	end
+	vim.opt.rtp:prepend(vim.env[env_path_override] or path)
+end
+
+function M.load_koala(leader_key)
+	vim.g.mapleader = leader_key
+	vim.g.maplocalleader = leader_key
+
+	-- Bootstrap KoalaVim
 	bootstrap('KoalaVim', 'KoalaVim', 'master', 'KOALA')
+
+	require('KoalaVim').init()
+end
+
+function M.load_lazy(user_spec, lazy_opts)
+	-- Bootstrap lazy.nvim
+	bootstrap('folke', 'lazy.nvim', 'stable', 'LAZY')
 
 	local koala_spec = require('KoalaVim.spec')
 
