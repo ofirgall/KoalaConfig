@@ -1,19 +1,32 @@
 ------------------------------
--- TODO: desc
+-- This file is the entry point of a neovim configuration
+--
+-- In order to load the config with KoalaVim we load:
+--     1. KoalaVim config - keymaps, options, usercmds, autocmds
+--     2. User config - keymaps, options, usercmds, autocmds (Overrides KoalaVim config)
+--     3. lazy.nvim - Loads the plugins
 ------------------------------
 
--- Remap space as leader key
+------------------------------
+-- Remap space as leader key to set the keymaps with correct leader key
+------------------------------
+
 -- TODO: [configure me] set different leader key
 local leader_key = ' '
 
+------------------------------
+-- Load KoalaVim config
+------------------------------
 require('koala_init').load_koala(leader_key)
 
--- Require files under dir
+------------------------------
+-- Load user config
+------------------------------
 local require_dir = require('KoalaVim.utils.require_dir')
 require_dir.require('config')
 require_dir.require('config/keymaps')
 
--- Lazy load config/lazy
+-- Lazy load config/lazy after KoalaVim
 vim.api.nvim_create_autocmd('User', {
 	pattern = 'KoalaVimStarted',
 	callback = function()
@@ -21,21 +34,19 @@ vim.api.nvim_create_autocmd('User', {
 	end,
 })
 
-
--- lazy.nvim user spec
-local spec = {
-	{ import = 'plugins' },
-	-- No need to import KoalaVim plugins they are loaded automatically from KoalaVim/lua/spec.lua
-}
-
--- lazy.nvim user opts
--- TODO: type hint
-local lazy_opts = {
-	install = {
-		-- TODO: [configure me] set your colorscheme
-		colorscheme = { 'ofirkai' }, -- Which colorscheme to let lazy.nvim load first
+------------------------------
+-- Load lazy.nvim
+------------------------------
+require('koala_init').load_lazy {
+	-- lazy.nvim user spec (combined with KoalaVim spec)
+	spec = {
+		{ import = 'plugins' },
+	},
+	-- lazy.nvim user opts (overrides KoalaVim lazy.nvim opts)
+	lazy_opts = {
+		install = {
+			-- TODO: [configure me] set your colorscheme
+			colorscheme = { 'ofirkai' }, -- Which colorscheme to let lazy.nvim load first
+		},
 	},
 }
-
-
-require('koala_init').load_lazy(spec, lazy_opts)

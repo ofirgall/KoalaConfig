@@ -28,13 +28,13 @@ function M.load_koala(leader_key)
 	require('KoalaVim').init()
 end
 
-function M.load_lazy(user_spec, lazy_opts)
+function M.load_lazy(opts)
 	-- Bootstrap lazy.nvim
 	bootstrap('folke', 'lazy.nvim', 'stable', 'LAZY')
 
 	local koala_spec = require('KoalaVim.spec')
 
-	user_spec = user_spec or {}
+	local user_spec = opts.user_spec or {}
 
 	-- Concat user_spec with koala_spec
 	local combined_spec = {}
@@ -72,7 +72,7 @@ function M.load_lazy(user_spec, lazy_opts)
 		},
 	}
 
-	lazy_opts = vim.tbl_deep_extend('keep', lazy_opts or {}, koala_lazy_opts)
+	local lazy_opts = vim.tbl_deep_extend('keep', opts.lazy_opts or {}, koala_lazy_opts)
 	-- Force combined spec
 	lazy_opts.spec = combined_spec
 
