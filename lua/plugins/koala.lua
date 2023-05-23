@@ -4,8 +4,13 @@ local M = {}
 table.insert(M, {
 	'KoalaVim/KoalaVim',
 	opts = {
-		-- No opts for now
+		autocmds = {
+			half_screen = {
+				full_screen_width = 273,
+			},
+		},
 	},
 })
+
 
 return M
