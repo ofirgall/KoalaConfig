@@ -3,10 +3,11 @@
   "ChatGPT.nvim": { "branch": "main", "commit": "5a0fdf6c408a53924081aff0b7379e765c7edc1b" },
   "CodeGPT.nvim": { "branch": "master", "commit": "14269e1320b276b5c5a5924936caa04e0743164c" },
   "Comment.nvim": { "branch": "master", "commit": "a89339ffbee677ab0521a483b6dac7e2e67c907e" },
-  "KoalaVim": { "branch": "master", "commit": "d051a236c44213068222c7faddec73da89fc0213" },
+  "KoalaVim": { "branch": "master", "commit": "354ea8df63389643311b52f0f76a5705ec26ae73" },
   "Navigator.nvim": { "branch": "master", "commit": "631898141d639acd79f12432be9ac91af3cbc71f" },
   "NeoZoom.lua": { "branch": "main", "commit": "33a45965f99b24a8e7da98f9c976285f946689fe" },
   "ai.vim": { "branch": "main", "commit": "17a61d5bd8b84791b7db6757abefb763f98a4fd1" },
+  "alpha-nvim": { "branch": "main", "commit": "1838ae926e8d49fe5330d1498ee8289ae2c340bc" },
   "auto-session": { "branch": "main", "commit": "f391aba10ee61927a1cceb9ea3a9dde501e87e9e" },
   "based.nvim": { "branch": "main", "commit": "8a36e03313a07da23f06dbd803843e0646a5a70a" },
   "bufdelete.nvim": { "branch": "master", "commit": "8933abc09df6c381d47dc271b1ee5d266541448e" },
@@ -56,6 +57,7 @@
   "neodev.nvim": { "branch": "main", "commit": "da1562e1e3df0e994ddc52cb4ba22376a5d7f2fc" },
   "noice.nvim": { "branch": "main", "commit": "7bd435a48a2d2b3f028c633126e3f669ae6b902f" },
   "nui.nvim": { "branch": "main", "commit": "ecd9def93891b9260b15b5fcef542eaabf4145c9" },
+  "numb.nvim": { "branch": "master", "commit": "2c89245d1185e02fec1494c45bc765a38b6b40b3" },
   "nvim-FeMaco.lua": { "branch": "main", "commit": "7f18adaa2e62dcfdce3cce9677eeb9371e584f85" },
   "nvim-autopairs": { "branch": "master", "commit": "7566a86f44bb72ba2b1a609f528a27d93241502d" },
   "nvim-cmp": { "branch": "main", "commit": "777450fd0ae289463a14481673e26246b5e38bf2" },
@@ -119,5 +121,6 @@
   "vim-snippets": { "branch": "master", "commit": "9ffe6dccaed68a0f86a1b16700c7926de891cdb6" },
   "vim-spellsync": { "branch": "master", "commit": "27e103f2d283a1f6e24cc99dbdcd624713aff277" },
   "vim-visual-multi": { "branch": "master", "commit": "724bd53adfbaf32e129b001658b45d4c5c29ca1a" },
+  "which-key.nvim": { "branch": "main", "commit": "e271c28118998c93a14d189af3395812a1aa646c" },
   "yanky.nvim": { "branch": "main", "commit": "c4c794afd762a00ca543972e5b9e34ce9aa14a87" }
 }
