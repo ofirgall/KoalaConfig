@@ -9,6 +9,11 @@ table.insert(M, {
 				full_screen_width = 273,
 			},
 		},
+		plugins = {
+			open_jira = {
+				jira_url = 'https://volumez.atlassian.net/browse/',
+			},
+		},
 	},
 })
 
