@@ -19,7 +19,7 @@ table.insert(M, {
 			background = background,
 			telescope_prompt = '#131310',
 
-			cursor_line_bg = '#232729',
+			cursor_line_bg = '#24282a',
 			winbar_bg = '#1e2224',
 			white = '#edede5',
 
