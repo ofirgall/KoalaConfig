@@ -22,6 +22,7 @@ table.insert(M, {
 			cursor_line_bg = '#24282a',
 			winbar_bg = '#1e2224',
 			white = '#edede5',
+			visual_bg = '#30303c',
 
 			-- syntax
 			aqua = '#5ccfe5',
