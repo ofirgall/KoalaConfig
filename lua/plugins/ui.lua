@@ -42,6 +42,12 @@ table.insert(M, {
 			vert_split_fg_active = '#797979',
 			git_signs_add = '#567e06',
 			git_signs_change = '#0063c0',
+
+			-- darker diff colors
+			diff_add = '#293e04',
+			diff_remove = '#400519',
+			diff_change = '#182c57',
+			diff_text = '#14233e',
 		},
 		custom_hlgroups = {
 			-- TODO: make IndentContext grey?
