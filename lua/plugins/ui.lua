@@ -6,9 +6,9 @@ table.insert(M, {
 })
 
 -- brown
-local ui_bg = '#1b1c16'
-ui_bg = '#1a1b15'
-ui_bg = '#171812'
+local sidebar_bg = '#1b1c16'
+sidebar_bg = '#1a1b15'
+sidebar_bg = '#171812'
 -- TODO: only for cmp
 local float_color = '#17171f'
 float_color = '#0f101f'
@@ -17,11 +17,11 @@ float_color = '#131426'
 
 local telescope_bg = '#0f1018'
 local telescope_preview_border = '#14151d'
-ui_bg = telescope_preview_border
-ui_bg = '#171717'
+sidebar_bg = telescope_preview_border
+sidebar_bg = '#171717'
 telescope_preview_border = '#12131b'
 local telescope_prompt = float_color
--- float_color = ui_bg
+-- float_color = sidebar_bg
 
 local maybe_better_float_color = '#18192b'
 local float_color_brighter = '#1c1e38'
@@ -53,6 +53,9 @@ table.insert(M, {
 			-- visual_bg = '#30303c',
 			visual_bg = '#14364e',
 			search_bg = '#14364e',
+			inc_search_bg = '#652d67',
+			inc_search_fg = '#edede5', -- same as white
+
 
 			-- syntax
 			aqua = '#58cbe1',
@@ -65,7 +68,9 @@ table.insert(M, {
 			dark_yellow = '#fbcd1d',
 
 			-- ui
-			ui_bg = ui_bg, -- background for ui, file tree and such.
+			sidebar_bg = sidebar_bg,
+			ui_bg = float_color,
+			ui_title_fg = '#e373cd',
 
 			vert_split_fg = '#7b7b7b',
 			vert_split_fg_active = '#888888',
@@ -80,64 +85,6 @@ table.insert(M, {
 			diff_text = '#14233e',
 		},
 		custom_hlgroups = {
-			-- White border
-			FloatBorder = {
-				fg = white,
-				bg = background,
-			},
-			NormalFloat = {
-				link = 'Normal',
-			},
-			FloatTitle = {
-				fg = '#e373cd',
-				bg = float_color,
-			},
-
-			CmpFloat = {
-				fg = white,
-				bg = float_color,
-				link = '',
-			},
-			CmpFloatBorder = {
-				fg = float_color,
-				bg = float_color,
-				link = '',
-			},
-
-			SagaBorder = {
-				fg = float_color,
-				bg = float_color,
-				link = '',
-			},
-			DiagnosticShowBorder = {
-				fg = float_color,
-				bg = float_color,
-				link = '',
-			},
-			-- CodeActionNormal = {
-			-- 	link = 'SagaNormal',
-			-- },
-			CodeActionBorder = {
-				link = 'FloatBorder',
-			},
-			ActionPreviewBorder = {
-				link = 'FloatBorder',
-			},
-
-			-- Blue border (only for cmp)
-			-- FloatBorder = {
-			-- 	fg = float_color,
-			-- 	bg = float_color
-			-- },
-			-- NormalFloat = {
-			-- 	fg = float_color,
-			-- 	bg = float_color
-			-- },
-
-			-- IndentContext = {
-			-- 	fg = '#762e6d',
-			-- },
-
 			LineNr = {
 				fg = '#7a7a7a',
 			},
@@ -183,17 +130,6 @@ table.insert(M, {
 			},
 			NoiceCmdlinePopupBorderSearch = {
 				link = 'NoiceBorder',
-			},
-
-			Search = {
-				-- fg='#dcd7ba',
-				-- bg='#2d4f67',
-				bg='#14364e',
-			},
-			IncSearch = {
-				fg = white,
-				-- fg='#dcd7ba',
-				bg='#652d67',
 			},
 		},
 	},
