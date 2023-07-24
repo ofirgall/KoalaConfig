@@ -8,27 +8,56 @@ table.insert(M, {
 -- brown
 local ui_bg = '#1b1c16'
 ui_bg = '#1a1b15'
-ui_bg = '#1f1f19'
+ui_bg = '#171812'
+-- TODO: only for cmp
+local float_color = '#17171f'
+float_color = '#0f101f'
+float_color = '#0e1024'
+float_color = '#131426'
+
+local telescope_bg = '#0f1018'
+local telescope_preview_border = '#14151d'
+ui_bg = telescope_preview_border
+ui_bg = '#171717'
+telescope_preview_border = '#12131b'
+local telescope_prompt = float_color
+-- float_color = ui_bg
+
+local maybe_better_float_color = '#18192b'
+local float_color_brighter = '#1c1e38'
+local bufferline_derived_color = '#15162a'
+
+-- swap telescopes
+-- local a = telescope_bg
+-- telescope_bg = telescope_prompt
+-- telescope_prompt = a
+
 local background = '#080c10'
 local white = '#edede5'
+white = '#e8e8e0'
 
 table.insert(M, {
 	'ofirgall/ofirkai.nvim',
+	-- enabled = false,
 	opts = {
 		scheme = {
 			-- midnight.nvim
 			background = background,
-			telescope_prompt = '#131310',
+			telescope_prompt = telescope_prompt,
+			telescope_bg = telescope_bg,
 
-			cursor_line_bg = '#24282a',
-			winbar_bg = '#1e2224',
+			-- cursor_line_bg = '#1f2325',
+			cursor_line_bg = '#1b1f21',
+			winbar_bg = '#171b1d',
 			white = '#edede5',
-			visual_bg = '#30303c',
+			-- visual_bg = '#30303c',
+			visual_bg = '#14364e',
+			search_bg = '#14364e',
 
 			-- syntax
-			aqua = '#5ccfe5',
+			aqua = '#58cbe1',
 			orange = '#f8921a',
-			green = '#a3df2b',
+			green = '#9eda26',
 			yellow = '#e1d66f',
 			light_red = '#e5125e',
 			purple = '#a97cfa',
@@ -39,9 +68,10 @@ table.insert(M, {
 			ui_bg = ui_bg, -- background for ui, file tree and such.
 
 			vert_split_fg = '#7b7b7b',
-			vert_split_fg_active = '#797979',
+			vert_split_fg_active = '#888888',
 			git_signs_add = '#567e06',
 			git_signs_change = '#0063c0',
+			tab_visible_fg = '#944770',
 
 			-- darker diff colors
 			diff_add = '#293e04',
@@ -50,9 +80,62 @@ table.insert(M, {
 			diff_text = '#14233e',
 		},
 		custom_hlgroups = {
-			-- TODO: make IndentContext grey?
+			-- White border
+			FloatBorder = {
+				fg = white,
+				bg = background,
+			},
+			NormalFloat = {
+				link = 'Normal',
+			},
+			FloatTitle = {
+				fg = '#e373cd',
+				bg = float_color,
+			},
+
+			CmpFloat = {
+				fg = white,
+				bg = float_color,
+				link = '',
+			},
+			CmpFloatBorder = {
+				fg = float_color,
+				bg = float_color,
+				link = '',
+			},
+
+			SagaBorder = {
+				fg = float_color,
+				bg = float_color,
+				link = '',
+			},
+			DiagnosticShowBorder = {
+				fg = float_color,
+				bg = float_color,
+				link = '',
+			},
+			-- CodeActionNormal = {
+			-- 	link = 'SagaNormal',
+			-- },
+			CodeActionBorder = {
+				link = 'FloatBorder',
+			},
+			ActionPreviewBorder = {
+				link = 'FloatBorder',
+			},
+
+			-- Blue border (only for cmp)
+			-- FloatBorder = {
+			-- 	fg = float_color,
+			-- 	bg = float_color
+			-- },
+			-- NormalFloat = {
+			-- 	fg = float_color,
+			-- 	bg = float_color
+			-- },
+
 			-- IndentContext = {
-			-- 	fg = scheme.dimmed_aqua,
+			-- 	fg = '#762e6d',
 			-- },
 
 			LineNr = {
@@ -62,19 +145,26 @@ table.insert(M, {
 				fg = '#e0e0e0',
 			},
 
-			-- brown telescope
-			TelescopePreviewNormal = {
-				bg = '#1f1f19',
+			TelescopePreviewBorder = {
+				fg = telescope_preview_border,
+				bg = telescope_preview_border,
 			},
-			-- TODO: make the dark section lighter
 
 			-- Swapped noice
 			NoiceCmdLine = {
 				bg = background,
 			},
 			NoiceBorder = {
-				fg = '#1f1f19',
-				bg = '#1f1f19',
+				-- fg = '#1f1f19',
+				-- bg = '#1f1f19',
+				-- fg = white,
+				-- bg = white,
+				fg = float_color,
+				bg = float_color,
+			},
+			NoiceFormatTitle = {
+				bg = float_color,
+				fg = float_color,
 			},
 			NoiceCmdlinePopup = { -- Actual search line
 				link = 'NoiceCmdLine',
@@ -93,6 +183,30 @@ table.insert(M, {
 			},
 			NoiceCmdlinePopupBorderSearch = {
 				link = 'NoiceBorder',
+			},
+
+			Search = {
+				-- fg='#dcd7ba',
+				-- bg='#2d4f67',
+				bg='#14364e',
+			},
+			IncSearch = {
+				fg = white,
+				-- fg='#dcd7ba',
+				bg='#652d67',
+			},
+		},
+	},
+})
+
+table.insert(M, {
+	'akinsho/bufferline.nvim',
+	opts = {
+		options = {
+			separator_style = 'thick',
+			base_colors = {
+				normal_bg = float_color_brighter,
+				separator_background_color = background,
 			},
 		},
 	},
