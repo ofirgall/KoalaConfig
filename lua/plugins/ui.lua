@@ -92,6 +92,7 @@ table.insert(M, {
 				fg = '#e0e0e0',
 			},
 
+			-- TODO: ????
 			TelescopePreviewBorder = {
 				fg = telescope_preview_border,
 				bg = telescope_preview_border,
