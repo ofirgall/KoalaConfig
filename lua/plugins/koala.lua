@@ -14,8 +14,12 @@ table.insert(M, {
 				jira_url = 'https://volumez.atlassian.net/browse/',
 			},
 		},
+		lsp = {
+			format = {
+				blacklist = { 'clangd' },
+			},
+		},
 	},
 })
-
 
 return M
