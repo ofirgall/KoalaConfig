@@ -8,6 +8,7 @@ table.insert(M, {
 			half_screen = {
 				full_screen_width = 273,
 			},
+			absolute_lines = false,
 		},
 		plugins = {
 			open_jira = {
