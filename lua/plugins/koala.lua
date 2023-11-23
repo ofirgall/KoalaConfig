@@ -17,7 +17,7 @@ table.insert(M, {
 		},
 		lsp = {
 			format = {
-				blacklist = { 'clangd' },
+				blacklist = { 'clangd', 'ruff_lsp' },
 			},
 		},
 	},
