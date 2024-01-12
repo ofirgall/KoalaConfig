@@ -35,7 +35,7 @@ vim.api.nvim_create_autocmd('User', {
 ------------------------------
 -- Load lazy.nvim
 ------------------------------
-require('koala_init').load_lazy {
+require('koala_init').load_lazy({
 	-- lazy.nvim user spec (combined with KoalaVim spec)
 	user_spec = {
 		{ import = 'plugins' },
@@ -46,4 +46,4 @@ require('koala_init').load_lazy {
 			colorscheme = { 'ofirkai' }, -- Which colorscheme to let lazy.nvim load first
 		},
 	},
-}
+})
