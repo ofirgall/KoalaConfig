@@ -4,7 +4,7 @@ local config_autocmds = api.nvim_create_augroup('config_not_lazy', { clear = tru
 
 local uv = vim.loop
 
-api.nvim_create_autocmd('VimEnter', {
+api.nvim_create_autocmd({'VimEnter', 'VimLeave'}, {
 	group = config_autocmds,
 	callback = function()
 		if vim.env.TMUX_PLUGIN_MANAGER_PATH then
