@@ -11,6 +11,7 @@ table.insert(M, {
 
 table.insert(M, {
 	'subnut/nvim-ghost.nvim',
+	enabled = false,
 	init = function()
 		vim.g.nvim_ghost_autostart = 0
 	end,
