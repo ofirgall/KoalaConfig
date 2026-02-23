@@ -20,7 +20,7 @@ end
 
 function M.load_koala(leader_key)
 	vim.g.mapleader = leader_key
-	vim.g.maplocalleader = leader_key
+	vim.g.maplocalleader = '\\'
 
 	-- Bootstrap KoalaVim
 	bootstrap('KoalaVim', 'KoalaVim', 'master', 'KOALA')
